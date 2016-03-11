@@ -2,7 +2,19 @@
   <head></head>
   <body>
     <p>
-      "The secret number is <%= number %>"
+      <%= if message == 'Nice one! You got it!'
+            "The secret number was #{number}"
+          else
+            "Take a guess between 0 - 4"
+          end
+      %>
     </p>
+    <form>
+      <input type='text' name ='guess' />
+      <input type='submit' value = 'Guess!' />
+      <br>
+      <br>
+      <%= message %>
+    </form>
   </body>
 </html>

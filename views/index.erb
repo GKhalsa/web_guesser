@@ -9,7 +9,8 @@
   <body>
     <p>
       <%= if message == 'Nice one! You got it!'
-            "The secret number was #{number}"
+            "Nice one! The secret number was #{guess}. The secret
+             number has now been reset"
           else
             "Take a guess between 0 - 4.   " + guess_message
           end

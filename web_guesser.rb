@@ -58,9 +58,16 @@ def low
   "Too low!"
 end
 
+def check_cheat(cheat)
+  if cheat == "true"
+    "Since you are so persuasive, the secret number is #{@@number}"
+  end
+end
+
 get '/' do
   guess = params["guess"].to_i
+  cheat = check_cheat(params["cheat"])
   message = check_guess(guess)
   guess_message = guess_num
-  erb :index, :locals => { :guess => guess, :number => @@number, :message => message, :color => $color, :guess_message => guess_message }
+  erb :index, :locals => { :guess => guess, :number => @@number, :message => message, :color => $color, :guess_message => guess_message, :cheat => cheat }
 end
